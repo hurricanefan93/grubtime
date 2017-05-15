@@ -1,5 +1,7 @@
 @import 'utility';
-
+@import 'header';
+@import 'login';
+@import 'profile';
 $base-text-size: 16px;
 $base-font-family: sans-serif;
 
@@ -8,6 +10,36 @@ html {
 }
 
 body {
+  background-image: url('https://media.timeout.com/images/101525401/image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
   margin: 0;
+  position: fixed;
   font: $base-text-size / 1 $base-font-family;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .search {
+    margin-top: 40vh;
+    border-radius: 5px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    height: 10vh;
+    width: 70vh;
+    transition: all 0.5s ease;
+    outline: none;
+  }
+}
+
+.search:focus {
+  width: 80vh;
+  outline-color: white 10px;
 }

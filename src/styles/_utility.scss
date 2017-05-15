@@ -1,5 +1,9 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 $base-text-size: 16px;
-$base-font-family: sans-serif;
+$base-font-family: 'Raleway', sans-serif;
+$full-width: 100%;
 
 // Remove the browsers built-in styling for lists elements.
 @mixin reset-list {
@@ -16,7 +20,38 @@ $base-font-family: sans-serif;
   height: 100%;
 
   body,
-  #root {
+  #root,
+  #root > div {
     min-height: 100%;
+    min-width: 100%;
   }
+}
+
+@mixin display-hor-center {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  margin: 0 auto;
+}
+
+@mixin display-hor-spaceA {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@mixin display-hor-spaceB {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@mixin display-vert-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }

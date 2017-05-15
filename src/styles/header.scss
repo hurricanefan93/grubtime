@@ -1,0 +1,103 @@
+@import 'utility';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(27, 27, 27, 0.94);
+  padding: 4px;
+}
+
+nav.Mobile {
+  display: none;
+}
+
+nav.Computer {
+  max-width: 1200px;
+  height: 8vh;
+
+  @include display-hor-spaceB;
+
+  margin: auto 20px;
+  font-family: 'Raleway';
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Raleway';
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-right: 8px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  nav.Computer {
+    display: none;
+  }
+
+  nav.Mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    margin: auto 20px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: 'Raleway';
+    }
+
+    .Login {
+      button {
+        background-color: inherit;
+        border: none;
+        color: white;
+        font-size: 30px;
+        margin: auto 10px;
+
+        &:focus {
+          border: none;
+          box-shadow: none;
+          outline: 0;
+        }
+
+        &:hover {
+          border: none;
+          color: lightgreen;
+          cursor: pointer;
+        }
+
+        &:active {
+          border: none;
+          color: lightgreen;
+        }
+      }
+    }
+  }
+}
