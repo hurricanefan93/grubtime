@@ -2,6 +2,7 @@
 @import 'header';
 @import 'login';
 @import 'profile';
+@import 'home';
 $base-text-size: 16px;
 $base-font-family: sans-serif;
 
@@ -27,19 +28,53 @@ form {
   justify-content: center;
 
   .search {
-    margin-top: 40vh;
     border-radius: 5px;
     font-size: 30px;
     border: 1px solid #ccc;
     padding: 5px;
     height: 10vh;
-    width: 70vh;
+    width: 70vw;
     transition: all 0.5s ease;
     outline: none;
   }
 }
 
 .search:focus {
-  width: 80vh;
+  width: 90vw;
   outline-color: white 10px;
+}
+// @media only screen and (max-width: 500px) {
+//   .search {
+//     margin-top: 40vh;
+//     border-radius: 5px;
+//     font-size: 30px;
+//     border: 1px solid #ccc;
+//     padding: 5px;
+//     height: 10vh;
+//     width: 70vw;
+//     transition: all 0.5s ease;
+//     outline: none;
+//   }
+// }
+//
+// .search:focus {
+//   width: 80vw;
+//   outline-color: white 10px;
+// }
+
+.App {
+  display: flex;
+  flex-direction: column;
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+}
+
+.App,
+.Home {
+  min-height: 100%;
 }

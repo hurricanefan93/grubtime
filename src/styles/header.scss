@@ -19,9 +19,7 @@ nav.Mobile {
 nav.Computer {
   max-width: 1200px;
   height: 8vh;
-
   @include display-hor-spaceB;
-
   margin: auto 20px;
   font-family: 'Raleway';
 
@@ -45,7 +43,6 @@ nav.Computer {
     margin-right: 8px;
   }
 }
-
 @media only screen and (max-width: 500px) {
   body {
     width: 100vw;
@@ -65,14 +62,16 @@ nav.Computer {
     height: 8vh;
     margin: auto 20px;
 
-    a {
-      text-decoration: none;
-      color: white;
-      font-size: 30px;
-      font-weight: bold;
-      font-family: 'Raleway';
+    img {
+      margin-top: 5px;
     }
-
+    // a {
+    //   text-decoration: none;
+    //   color: white;
+    //   font-size: 30px;
+    //   font-weight: bold;
+    //   font-family: 'Raleway';
+    // }
     .Login {
       button {
         background-color: inherit;

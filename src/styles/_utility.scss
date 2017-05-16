@@ -22,7 +22,7 @@ $full-width: 100%;
   body,
   #root,
   #root > div {
-    min-height: 100%;
+    min-height: 100vh;
     min-width: 100%;
   }
 }
