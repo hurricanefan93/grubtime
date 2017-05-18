@@ -19,7 +19,9 @@ nav.Mobile {
 nav.Computer {
   max-width: 1200px;
   height: 8vh;
+
   @include display-hor-spaceB;
+
   margin: auto 20px;
   font-family: 'Raleway';
 
@@ -43,7 +45,40 @@ nav.Computer {
     margin-right: 8px;
   }
 }
+
 @media only screen and (max-width: 500px) {
+  aside.menuMobile {
+    display: block;
+    // height: 100vh;
+    top: 45px;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: rgba(27, 27, 27, 0.94);
+    width: 40vw;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    padding: 0 10px;
+    transition: transform 200ms ease;
+    transform: translateX(0);
+
+    section {
+      ul {
+        @include reset-list
+
+          a {
+          color: white;
+        }
+      }
+    }
+
+    &.hidden {
+      transform: translateX(100vw);
+    }
+  }
+
   body {
     width: 100vw;
     display: flex;
@@ -65,37 +100,36 @@ nav.Computer {
     img {
       margin-top: 5px;
     }
-    // a {
-    //   text-decoration: none;
-    //   color: white;
-    //   font-size: 30px;
-    //   font-weight: bold;
-    //   font-family: 'Raleway';
-    // }
-    .Login {
-      button {
-        background-color: inherit;
+
+    .Logo {
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button {
+      background-color: inherit;
+      border: none;
+      color: white;
+      font-size: 30px;
+      margin: auto 10px;
+
+      &:focus {
         border: none;
-        color: white;
-        font-size: 30px;
-        margin: auto 10px;
+        box-shadow: none;
+        outline: 0;
+      }
 
-        &:focus {
-          border: none;
-          box-shadow: none;
-          outline: 0;
-        }
+      &:hover {
+        border: none;
+        color: lightgreen;
+        cursor: pointer;
+      }
 
-        &:hover {
-          border: none;
-          color: lightgreen;
-          cursor: pointer;
-        }
-
-        &:active {
-          border: none;
-          color: lightgreen;
-        }
+      &:active {
+        border: none;
+        color: lightgreen;
       }
     }
   }

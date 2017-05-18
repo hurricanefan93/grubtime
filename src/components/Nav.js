@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { observer } from 'mobx-react'
 import ui from '../ui'
+import cx from 'classnames'
 import logowhite from '../logowhite.png'
 
+@observer
 class Nav extends Component {
   render () {
+    console.log(ui.menuShown, 'jmm')
     return <header>
       <nav className='Computer'>
         <div className='Logo'>
@@ -19,10 +23,17 @@ class Nav extends Component {
       <nav className='Mobile'>
         <div className='Logo'>
           <h1><NavLink to='/'><img src={logowhite} height='80px' width='80px' /></NavLink></h1>
-        </div>
-        <div className='Login'>
           <button onClick={() => ui.toggleMenu()}><i className='fa fa-bars' aria-hidden='true' /></button>
         </div>
+        <aside className={cx('menuMobile', { hidden: !ui.menuShown })}>
+          <section>
+            <ul>
+              <li onClick={() => ui.toggleMenu()}><NavLink to='/'>Home</NavLink></li>
+              <li onClick={() => ui.toggleMenu()}><NavLink to='/auth0'>Login</NavLink></li>
+              <li onClick={() => ui.toggleMenu()}><NavLink to='/user/:name'>Profile</NavLink></li>
+            </ul>
+          </section>
+        </aside>
       </nav>
     </header>
   }
