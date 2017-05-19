@@ -33,6 +33,10 @@ nav.Computer {
     font-family: 'Raleway';
   }
 
+  a:hover {
+    border-bottom: 2px solid white;
+  }
+
   ul {
     display: flex;
     justify-content: space-between;

@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 import ui from '../ui'
 import cx from 'classnames'
 import logowhite from '../logowhite.png'
+import auth from '../auth'
 
 @observer
 class Nav extends Component {
@@ -16,7 +17,7 @@ class Nav extends Component {
         </div>
         <ul>
           <li><NavLink to='/'>Home</NavLink></li>
-          <li><NavLink to='/auth0'>Login</NavLink></li>
+          {auth.isSignedIn ? <li><NavLink onClick={() => auth.signOut()} to='/'>Logout</NavLink></li> : <li><NavLink onClick={() => auth.signIn()} to='/'>Login</NavLink></li>}
           <li><NavLink to='/user/:name'>Profile</NavLink></li>
         </ul>
       </nav>
@@ -29,7 +30,7 @@ class Nav extends Component {
           <section>
             <ul>
               <li onClick={() => ui.toggleMenu()}><NavLink to='/'>Home</NavLink></li>
-              <li onClick={() => ui.toggleMenu()}><NavLink to='/auth0'>Login</NavLink></li>
+              <li onClick={() => ui.toggleMenu()}><NavLink onClick={() => auth.signIn()} to='/'>Login</NavLink></li>
               <li onClick={() => ui.toggleMenu()}><NavLink to='/user/:name'>Profile</NavLink></li>
             </ul>
           </section>
