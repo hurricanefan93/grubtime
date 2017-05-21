@@ -61,6 +61,7 @@ class Auth {
   signOut () {
     this.token = null
   }
+
   @computed get isSignedIn () {
     return this.token && this.profile
   }

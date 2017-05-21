@@ -18,7 +18,7 @@ body {
   height: 100%;
   margin: 0;
   position: fixed;
-  font: $base-text-size / 1 $base-font-family;
+  // font: $base-text-size / 1 $base-font-family;
 }
 
 form {
@@ -29,11 +29,12 @@ form {
 
   .search {
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 25px;
     border: 1px solid #ccc;
     padding: 5px;
     height: 10vh;
     width: 70vw;
+    max-width: 575px;
     transition: all 0.5s ease;
     outline: none;
   }
@@ -43,9 +44,9 @@ form {
   width: 90vw;
   outline-color: white 10px;
 }
+
 // @media only screen and (max-width: 500px) {
 //   .search {
-//     margin-top: 40vh;
 //     border-radius: 5px;
 //     font-size: 30px;
 //     border: 1px solid #ccc;
@@ -55,11 +56,11 @@ form {
 //     transition: all 0.5s ease;
 //     outline: none;
 //   }
-// }
 //
-// .search:focus {
-//   width: 80vw;
-//   outline-color: white 10px;
+//   .search:focus {
+//     width: 80vw;
+//     outline-color: white 10px;
+//   }
 // }
 
 .App {

@@ -9,7 +9,7 @@ import auth from '../auth'
 @observer
 class Nav extends Component {
   render () {
-    console.log(ui.menuShown, 'jmm')
+    // console.log(ui.menuShown, 'jmm')
     return <header>
       <nav className='Computer'>
         <div className='Logo'>
@@ -29,8 +29,8 @@ class Nav extends Component {
         <aside className={cx('menuMobile', { hidden: !ui.menuShown })}>
           <section>
             <ul>
+              {auth.isSignedIn ? <li><NavLink onClick={() => auth.signOut()} to='/'>Logout</NavLink></li> : <li><NavLink onClick={() => auth.signIn()} to='/'>Login</NavLink></li>}
               <li onClick={() => ui.toggleMenu()}><NavLink to='/'>Home</NavLink></li>
-              <li onClick={() => ui.toggleMenu()}><NavLink onClick={() => auth.signIn()} to='/'>Login</NavLink></li>
               <li onClick={() => ui.toggleMenu()}><NavLink to='/user/:name'>Profile</NavLink></li>
             </ul>
           </section>

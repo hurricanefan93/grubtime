@@ -2,14 +2,15 @@
 
 header {
   position: fixed;
-  top: 0;
+  top: -10px;
   left: 0;
   right: 0;
   z-index: 1;
   width: 100%;
+  height: 58px;
   margin: 0 auto;
-  background-color: rgba(27, 27, 27, 0.94);
   padding: 4px;
+  background-color: rgba(27, 27, 27, 0.94);
 }
 
 nav.Mobile {
@@ -18,11 +19,11 @@ nav.Mobile {
 
 nav.Computer {
   max-width: 1200px;
-  height: 8vh;
+  // height: 8vh;
 
   @include display-hor-spaceB;
 
-  margin: auto 20px;
+  margin: auto 10px;
   font-family: 'Raleway';
 
   a {
@@ -42,7 +43,7 @@ nav.Computer {
     justify-content: space-between;
     color: white;
     list-style: none;
-    padding: 0;
+    padding: 5px;
   }
 
   li {
@@ -54,19 +55,19 @@ nav.Computer {
   aside.menuMobile {
     display: block;
     // height: 100vh;
-    top: 45px;
+    top: 53px;
     right: 0;
     bottom: 0;
     position: fixed;
     background-color: rgba(27, 27, 27, 0.94);
-    width: 40vw;
+    width: 30vw;
     z-index: 1;
     text-decoration: none;
     color: inherit;
     font-size: inherit;
     padding: 0 10px;
-    transition: transform 200ms ease;
-    transform: translateX(0);
+    transition: transform 250ms ease-in-out;
+    transform: translateX(5);
 
     section {
       ul {
@@ -87,7 +88,7 @@ nav.Computer {
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: auto 0;
   }
 
   nav.Computer {
@@ -95,14 +96,13 @@ nav.Computer {
   }
 
   nav.Mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include display-hor-spaceB;
+
     height: 8vh;
-    margin: auto 20px;
+    margin: auto 10px;
 
     img {
-      margin-top: 5px;
+      margin-top: 20px;
     }
 
     .Logo {
@@ -117,7 +117,7 @@ nav.Computer {
       border: none;
       color: white;
       font-size: 30px;
-      margin: auto 10px;
+      margin-top: 20px;
 
       &:focus {
         border: none;
