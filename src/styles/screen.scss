@@ -3,8 +3,9 @@
 @import 'login';
 @import 'profile';
 @import 'home';
+@import 'searchresults';
 $base-text-size: 16px;
-$base-font-family: sans-serif;
+$base-font-family: 'Raleway';
 
 html {
   @include full-height;
@@ -15,9 +16,10 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
+  background-attachment: fixed;
+  min-height: 100%;
   margin: 0;
-  position: fixed;
+  color: white;
   // font: $base-text-size / 1 $base-font-family;
 }
 

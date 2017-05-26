@@ -1,0 +1,15 @@
+@import 'utility';
+
+table {
+  height: 50vh;
+  width: 70vw;
+  border: 2px solid white;
+  font-family: $base-font-family;
+  color: white;
+  border-radius: 5px;
+  background-color: rgba(27, 27, 27, 0.94);
+}
+
+td {
+  border-bottom: 2px solid white;
+}

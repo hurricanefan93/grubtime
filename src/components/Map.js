@@ -1,56 +1,101 @@
 import React, { Component } from 'react'
-import { withGoogleMap, GoogleMap, initMap, Marker, google } from 'react-google-maps'
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
+import { post } from '../api'
 
 @withGoogleMap
 class Map extends Component {
-  // let map, infoWindow
-  // function initMap () {
-  //   map = new google.maps.Map(document.getElementById('map'), {
-  //     center: {lat: -34.397, lng: 150.644},
-  //     zoom: 6
-  //   })
-  //   infoWindow = new google.maps.InfoWindow()
-  //
-  //     // Try HTML5 geolocation.
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(function (position) {
-  //       var pos = {
-  //         lat: position.coords.latitude,
-  //         lng: position.coords.longitude
-  //       }
-  //
-  //       infoWindow.setPosition(pos)
-  //       infoWindow.setContent('Location found.')
-  //       infoWindow.open(map)
-  //       map.setCenter(pos)
-  //     }, function () {
-  //       handleLocationError(true, infoWindow, map.getCenter())
-  //     })
-  //   } else {
-  //       // Browser doesn't support Geolocation
-  //     handleLocationError(false, infoWindow, map.getCenter())
-  //   }
-  // }
-  //
-  //
-  // function handleLocationError (browserHasGeolocation, infoWindow, pos) {
-  //   infoWindow.setPosition(pos)
-  //   infoWindow.setContent(browserHasGeolocation
-  //                           ? 'Error: The Geolocation service failed.'
-  //                           : 'Error: Your browser doesn\'t support geolocation.')
-  //   infoWindow.open(map)
-  // }
+  state = {
+    center: {
+      lat: -82.4572,
+      lng: 27.9506
+    },
+    places: []
+  }
+
+  geocoder = new window.google.maps.Geocoder()
+
+  componentDidUpdate (prevProps, prevState) {
+    if (prevState.center.lat !== this.state.center.lat && prevState.center.lat !== this.state.center.lat) {
+      post('/api/Places', {
+        latitude: this.state.center.lat,
+        longitude: this.state.center.lng,
+        radius: 500
+      }).then((data) => {
+        this.setState({
+          places: data.results
+        })
+      })
+    }
+
+    if (prevProps.locationQuery !== this.props.locationQuery && this.props.locationQuery) {
+      this.geocoder.geocode({ address: this.props.locationQuery }, (result) => {
+        console.log(result)
+        if (result.length > 0) {
+          this.setState({
+            center: {
+              lat: result[0].geometry.location.lat(),
+              lng: result[0].geometry.location.lng()
+            }
+          })
+        } else {
+          window.alert('No location found')
+        }
+      })
+    }
+  }
+
+  _mapClick = (event) => {
+    console.log(event.latLng.lat(), event.latLng.lng())
+  }
+
+  componentDidMount () {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.setState({
+          center: {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          }
+        })
+      })
+    }
+  }
+
   render () {
-    const markers = this.props.markers || []
+    const markers = this.state.places.map((place) => {
+      return {
+        position: place.geometry.location,
+        title: place.name,
+        hours: place.opening_hours,
+        icon: {
+          url: place.icon,
+          scaledSize: new window.google.maps.Size(20, 20)
+        }
+      }
+    })
     return (
-      <GoogleMap
-        defaultZoom={4}
-        defaultCenter={{ lat: -35.363883, lng: 131.044822 }}>
-        {markers.map((marker, index) => (
-          <Marker {...marker} />
-        )
-      )}
-      </GoogleMap>
+      <div>
+        <GoogleMap
+          defaultZoom={14}
+          center={this.state.center}
+          onClick={this._mapClick}
+          >
+          {markers.map((marker, i) => (
+            <Marker {...marker} key={i}
+           />
+          ))}
+        </GoogleMap>
+        <ul>
+          {this.state.places.map((place, i) => {
+            return <li key={i}>
+              <h2>{place.name}</h2>
+              <p>Rating:{place.rating}</p>
+              <p>{JSON.stringify(place)}</p>
+            </li>
+          })}
+        </ul>
+      </div>
+
     )
   }
 }
