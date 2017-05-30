@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
-import { post } from '../api'
+import { get, post } from '../api'
 
 @withGoogleMap
 class Map extends Component {

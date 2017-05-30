@@ -10,7 +10,8 @@ header {
   height: 58px;
   margin: 0 auto;
   padding: 4px;
-  background-color: rgba(27, 27, 27, 0.94);
+  background-color: $theme-color;
+  // background-color: rgba(27, 27, 27, 0.94);
 }
 
 nav.Mobile {
@@ -19,11 +20,8 @@ nav.Mobile {
 
 nav.Computer {
   max-width: 1200px;
-  // height: 8vh;
-
   @include display-hor-spaceB;
-
-  margin: auto 10px;
+  margin: auto 8px;
   font-family: 'Raleway';
 
   a {
@@ -50,31 +48,34 @@ nav.Computer {
     margin-right: 8px;
   }
 }
-
 @media only screen and (max-width: 500px) {
   aside.menuMobile {
     display: block;
     // height: 100vh;
-    top: 53px;
+    top: 56px;
     right: 0;
     bottom: 0;
     position: fixed;
-    background-color: rgba(27, 27, 27, 0.94);
+    background-color: rgba(255, 255, 255, 0.9);
     width: 30vw;
     z-index: 1;
     text-decoration: none;
-    color: inherit;
-    font-size: inherit;
+    font-size: 20px;
     padding: 0 10px;
     transition: transform 250ms ease-in-out;
     transform: translateX(5);
 
     section {
       ul {
-        @include reset-list
+        @include reset-list @include display-vert-center;
 
-          a {
-          color: white;
+        font-family: $base-font-family;
+        margin-top: 5px;
+
+        a {
+          text-decoration: none;
+          color: $theme-color;
+          border-bottom: thin solid $theme-color;
         }
       }
     }
@@ -97,7 +98,6 @@ nav.Computer {
 
   nav.Mobile {
     @include display-hor-spaceB;
-
     height: 8vh;
     margin: auto 10px;
 

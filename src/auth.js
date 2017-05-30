@@ -1,9 +1,9 @@
 import Auth0Lock from 'auth0-lock'
 import IdTokenVerifier from 'idtoken-verifier'
-import { observable, autorun, computed, action } from 'mobx'
+import { observable, autorun, computed } from 'mobx'
 
-const CLIENT_ID = 'Af1iXNtoctC5uKS5mDNz43Z0OeQ7rDnR'
-const CLIENT_DOMAIN = 'hurricanefan93.auth0.com'
+const CLIENT_ID = 'ffYnyNA6vffqH31jR7O0opJZL4rpULPQ'
+const CLIENT_DOMAIN = 'hlb.auth0.com'
 
 class Auth {
   @observable token

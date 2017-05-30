@@ -3,7 +3,6 @@
 @import 'login';
 @import 'profile';
 @import 'home';
-@import 'searchresults';
 $base-text-size: 16px;
 $base-font-family: 'Raleway';
 
@@ -12,7 +11,8 @@ html {
 }
 
 body {
-  background-image: url('https://media.timeout.com/images/101525401/image.jpg');
+  background-image: url('https://static.pexels.com/photos/5938/food-salad-healthy-lunch.jpg');
+  // background-image: url('https://media.timeout.com/images/101525401/image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,10 +29,12 @@ form {
   align-items: center;
   justify-content: center;
 
-  .search {
+  input.search {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $theme-color;
     border-radius: 5px;
     font-size: 25px;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     padding: 5px;
     height: 10vh;
     width: 70vw;
@@ -40,6 +42,10 @@ form {
     transition: all 0.5s ease;
     outline: none;
   }
+}
+
+input::placeholder {
+  color: $theme-color;
 }
 
 .search:focus {
