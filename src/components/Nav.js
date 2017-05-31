@@ -9,15 +9,15 @@ import auth from '../auth'
 @observer
 class Nav extends Component {
   render () {
-    console.log(auth.profile.picture)
+    // console.log(auth.profile.picture)
     return <header>
       <nav className='Computer'>
         <div className='Logo'>
-          <h1><NavLink to='/'>GrubTime</NavLink></h1>
+          <h1><NavLink to='/home'>GrubTime</NavLink></h1>
         </div>
         <ul>
-          <li><NavLink to='/'>Home</NavLink></li>
-          {auth.isSignedIn ? <li><NavLink onClick={() => auth.signOut()} to='/'>Logout</NavLink></li> : <li><NavLink onClick={() => auth.signIn()} to='/'>Login</NavLink></li>}
+          <li><NavLink to='/home'>Home</NavLink></li>
+          {auth.isSignedIn ? <li><NavLink onClick={() => auth.signOut()} to='/home'>Logout</NavLink></li> : <li><NavLink onClick={() => auth.signIn()} to='/home'>Login</NavLink></li>}
           <li><NavLink to='/user/:name'>Profile</NavLink></li>
         </ul>
       </nav>

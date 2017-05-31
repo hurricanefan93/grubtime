@@ -24,8 +24,8 @@ class Home extends Component {
         <div className='mapContainer' style={{ width: 400, height: 400 }}>
           <Map
             locationQuery={this.state.locationQuery}
-            containerElement={<div style={{height: 100 + '%'}} />}
-            mapElement={<div style={{height: 100 + '%'}} />} />
+            containerElement={<div style={{height: 100 + '%', width: 100 + '%'}} />}
+            mapElement={<div style={{height: 100 + '%', width: 100 + '%'}} />} />
         </div>
       </div>
     </div>

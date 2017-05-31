@@ -20,7 +20,9 @@ nav.Mobile {
 
 nav.Computer {
   max-width: 1200px;
+
   @include display-hor-spaceB;
+
   margin: auto 8px;
   font-family: 'Raleway';
 
@@ -51,7 +53,6 @@ nav.Computer {
 @media only screen and (max-width: 500px) {
   aside.menuMobile {
     display: block;
-    // height: 100vh;
     top: 56px;
     right: 0;
     bottom: 0;
@@ -85,22 +86,17 @@ nav.Computer {
     }
   }
 
-  body {
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    margin: auto 0;
-  }
-
   nav.Computer {
     display: none;
   }
 
   nav.Mobile {
     @include display-hor-spaceB;
+
     height: 8vh;
     margin: auto 10px;
 
+    a,
     img {
       margin-top: 20px;
     }

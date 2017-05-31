@@ -3,6 +3,8 @@
 @import 'login';
 @import 'profile';
 @import 'home';
+@import 'landing';
+@import 'map';
 $base-text-size: 16px;
 $base-font-family: 'Raleway';
 
@@ -52,7 +54,6 @@ input::placeholder {
   width: 90vw;
   outline-color: white 10px;
 }
-
 // @media only screen and (max-width: 500px) {
 //   .search {
 //     border-radius: 5px;

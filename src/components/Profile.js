@@ -24,7 +24,7 @@ class Profile extends Component {
         <h3>Currently under construction... <i className='fa fa-spinner fa-spin fa-2x fa-fw' aria-hidden='true' /></h3>
       </div>
     } else {
-      return <Redirect to='/' />
+      return <Redirect to='/home' />
     }
   }
 }

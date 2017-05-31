@@ -16,10 +16,10 @@ class App extends Component {
         <main>
           <Switch>
             {/* {auth.isSignedIn ? } */}
-            <Route exact path='/' component={Landing} />
             <Route path='/home' component={Home} />
             <Route path='/auth0' component={Login} />
             <Route path='/user' component={Profile} />
+            <Route exact path='/' component={Landing} />
           </Switch>
         </main>
       </div>
