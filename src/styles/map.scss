@@ -11,12 +11,17 @@
   border-radius: 8px;
   font-family: $base-font-family;
 
-  li,
-  p,
-  ul, {
+  li {
     padding: 0;
     list-style: none;
-    width: 400px;
-    max-width: 400px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }

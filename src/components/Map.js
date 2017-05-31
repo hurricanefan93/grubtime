@@ -78,7 +78,7 @@ class Map extends Component {
     return (
       <div>
         <GoogleMap
-          defaultZoom={13}
+          defaultZoom={14}
           center={this.state.center}
           onClick={this._mapClick}
           >
@@ -104,7 +104,7 @@ class Map extends Component {
                 <p>Rating: {place.rating}</p>
                 <p>Location: {place.vicinity}</p>
                 <p />
-                <p>{JSON.stringify(place)}</p>
+                {/* <p>{JSON.stringify(place)}</p> */}
               </li>
             })}
           </ul>
