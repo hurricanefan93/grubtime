@@ -14,7 +14,6 @@ html {
 
 body {
   background-image: url('https://static.pexels.com/photos/5938/food-salad-healthy-lunch.jpg');
-  // background-image: url('https://media.timeout.com/images/101525401/image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,7 +21,7 @@ body {
   min-height: 100%;
   margin: 0;
   color: white;
-  // font: $base-text-size / 1 $base-font-family;
+  font-family: $base-text-size / 1 $base-font-family;
 }
 
 form {
