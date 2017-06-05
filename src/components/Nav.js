@@ -23,14 +23,14 @@ class Nav extends Component {
       </nav>
       <nav className='Mobile'>
         <div className='Logo'>
-          <h1><NavLink to='/'><img src={logowhite} height='80px' width='80px' /></NavLink></h1>
+          <h1><NavLink to='/home'><img src={logowhite} height='80px' width='80px' /></NavLink></h1>
           <button onClick={() => ui.toggleMenu()}><i className='fa fa-bars' aria-hidden='true' /></button>
         </div>
         <aside className={cx('menuMobile', { hidden: !ui.menuShown })}>
           <section>
             <ul>
               {auth.isSignedIn ? <li><NavLink onClick={() => auth.signOut()} to='/'>Logout</NavLink></li> : <li><NavLink onClick={() => auth.signIn()} to='/'>Login</NavLink></li>}
-              <li onClick={() => ui.toggleMenu()}><NavLink to='/'>Home</NavLink></li>
+              <li onClick={() => ui.toggleMenu()}><NavLink to='/home'>Home</NavLink></li>
               <li onClick={() => ui.toggleMenu()}><NavLink to='/user/:name'>Profile</NavLink></li>
             </ul>
           </section>

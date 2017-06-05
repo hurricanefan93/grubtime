@@ -25,3 +25,13 @@
     margin-bottom: 5px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  ul.results {
+    padding-left: 10px;
+  }
+
+  li {
+    margin-left: 0;
+  }
+}

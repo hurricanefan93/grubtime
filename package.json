@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "postbuild": "cp public/index.html public/200.html",
     "deploy": "yarn build && surge ./public --domain grubtime.garretmorales.surge.sh",
     "start": "webpack-dev-server",
     "prebuild": "rm -f public/index.html public/app-*.js public/vendor-*.js public/screen-*.css",

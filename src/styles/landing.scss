@@ -3,6 +3,7 @@
 .Landing {
   height: 100vh;
   width: 100vw;
+  transition: 5s ease-out;
 
   video {
     position: fixed;
@@ -12,38 +13,75 @@
     height: 100%;
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
-    transition: 1s opacity;
     object-fit: cover;
+    z-index: 2;
+  }
+}
+
+.Container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+  button,
+  button::after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
   }
 
   button {
-    margin: 10px;
-    padding: 20px;
-    border: 2px solid #f7f7f7;
-    text-align: center;
+    height: 10vh;
+    width: 50vw;
+    background: none;
+    border: 3px solid $theme-color;
+    border-radius: 5px;
+    color: $theme-color;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6em;
+    font-family: $base-font-family;
+    font-weight: bold;
+    margin: 1em auto;
+    // padding: 2em 6em;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 100;
+  }
+
+  button::after,
+  button::before {
+    background: $theme-color;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+
+  button:hover {
+    color: #fff;
+  }
+
+  /* BUTTON 1 */
+
+  ::after {
+    height: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  :hover::after {
+    height: 100%;
+  }
+
+  a {
     text-transform: uppercase;
     position: relative;
-    overflow: hidden;
-    transition: 0.3s;
+    transition: 3s ease-out;
     color: white;
-    background-color: white;
-
-    &::after {
-      position: absolute;
-      transition: 0.3s;
-      content: '';
-      width: 0;
-      left: 50%;
-      bottom: 0;
-      height: 3px;
-      background: #f7f7f7;
-    }
-
-    &::after {
-      left: 0;
-      bottom: auto;
-      top: -3px;
-      width: 100%;
-    }
+    z-index: 100;
+    text-decoration: none;
   }
 }

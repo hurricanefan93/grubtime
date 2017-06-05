@@ -10,6 +10,7 @@ header {
   margin: 0 auto;
   padding: 4px;
   background-color: $theme-color;
+  z-index: 1;
 }
 
 nav.Mobile {
@@ -17,11 +18,11 @@ nav.Mobile {
 }
 
 nav.Computer {
-  max-width: 1200px;
+  // max-width: 1200px;
 
   @include display-hor-spaceB;
 
-  margin: auto 8px;
+  margin: auto 5px;
   font-family: 'Raleway';
 
   a {
