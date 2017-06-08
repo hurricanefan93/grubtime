@@ -18,8 +18,6 @@ nav.Mobile {
 }
 
 nav.Computer {
-  // max-width: 1200px;
-
   @include display-hor-spaceB;
 
   margin: auto 5px;

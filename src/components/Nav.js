@@ -9,7 +9,6 @@ import auth from '../auth'
 @observer
 class Nav extends Component {
   render () {
-    // console.log(auth.profile.picture)
     return <header>
       <nav className='Computer'>
         <div className='Logo'>
