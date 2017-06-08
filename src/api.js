@@ -1,5 +1,5 @@
 import auth from './auth'
-const API_BASE = 'https://grubtime-uwueucqmxp.now.sh'
+const API_BASE = 'https://grubtime-tjzujbdiju.now.sh'
 
 const get = (path, query) => {
   let url = API_BASE + path
