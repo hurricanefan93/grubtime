@@ -27,6 +27,6 @@ class Profile extends Component {
       return <Redirect to='/home' />
     }
   }
-}
+  }
 
 export default Profile
