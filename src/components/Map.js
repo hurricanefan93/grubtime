@@ -104,7 +104,7 @@ class Map extends Component {
                 <p>Rating: {place.rating}</p>
                 <p>Location: {place.vicinity}</p>
                 {/* <p>Photo: {place.photos}</p> */}
-                <p>{JSON.stringify(place)}</p>
+                {/* <p>{JSON.stringify(place)}</p> */}
               </li>
             })}
           </ul>

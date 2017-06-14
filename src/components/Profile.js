@@ -16,12 +16,12 @@ class Profile extends Component {
             <ul>
               <li>{auth.profile.name}</li>
               <li>{auth.profile.email}</li>
-              <li />
-              <li />
+              {/* <li />
+              <li /> */}
             </ul>
           </div>
         </div>
-        <h3>Currently under construction... <i className='fa fa-spinner fa-spin fa-2x fa-fw' aria-hidden='true' /></h3>
+        {/* <h3>Currently under construction... <i className='fa fa-spinner fa-spin fa-2x fa-fw' aria-hidden='true' /></h3> */}
       </div>
     } else {
       return <Redirect to='/home' />
