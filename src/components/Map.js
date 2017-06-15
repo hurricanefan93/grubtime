@@ -14,6 +14,11 @@ class Map extends Component {
   }
 
   geocoder = new window.google.maps.Geocoder()
+  // directionsService = new window.google.maps.DirectionsService()
+  // directionsDisplay = new window.google.maps.DirectionsRenderer({
+  //   suppressMarkers: false
+  // })
+  // directionsDisplay
 
   componentDidUpdate (prevProps, prevState) {
     if (prevState.center.lat !== this.state.center.lat && prevState.center.lat !== this.state.center.lat) {
@@ -64,8 +69,10 @@ class Map extends Component {
 
   render () {
     const markers = this.state.places.map((place) => {
+      console.log(place)
       return {
         id: place.id,
+        place_id: place.place_id,
         position: place.geometry.location,
         title: place.name,
         hours: place.opening_hours,
@@ -88,13 +95,18 @@ class Map extends Component {
               {marker.id === this.state.openInfoId && (
                 <InfoWindow onCloseClick={() => { this.setState({ openInfoId: null }) }}>
                   <div style={{ color: '#333' }}>
-                    <h4 style={{ marginTop: '0' }}>{marker.title}</h4>
-                    <p>Open Now!</p>
+                    <h4 style={{ marginTop: '10px' }}>{marker.title}</h4>
+                    <p><strong>Open Now!</strong></p>
+                    <p>
+                      <a href={`https://www.google.com/maps/place/?q=place_id:${marker.place_id}`}>Get Directions</a>
+                    </p>
+                    {/* <p>{marker.hours}</p> */}
                   </div>
                 </InfoWindow>
               )}
             </Marker>
           ))}
+          <Marker position={this.state.center} />
         </GoogleMap>
         <div className='list'>
           <ul className='results'>
