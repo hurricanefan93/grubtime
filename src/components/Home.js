@@ -21,7 +21,7 @@ class Home extends Component {
             <input type='search' ref='query' className='search' placeholder='Enter your location..' />
           </div>
         </form>
-        <div className='mapContainer' style={{ width: 400, height: 400 }}>
+        <div className='mapContainer' style={{ width: 800, height: 800 }}>
           <Map
             locationQuery={this.state.locationQuery}
             containerElement={<div style={{height: 100 + '%', width: 100 + '%'}} />}
